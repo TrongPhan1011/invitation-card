@@ -1,0 +1,290 @@
+body {
+  background: url("./img/bg.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  font: 20px "Nunito", Arial, sans-serif;
+  overflow-x: hidden;
+  transition: background 3s linear;
+}
+.container {
+  width: 50%;
+  margin: 10px auto;
+  text-align: center;
+}
+.categories {
+  margin: 0 auto;
+  max-width: 360px;
+  transform: translateX(0);
+}
+.category {
+  margin: 0 auto;
+  display: none;
+}
+.category.active {
+  display: block;
+}
+.category h1 {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #fff;
+}
+.cards {
+  width: 300px;
+  height: 550px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  display: flex;
+  padding: 100px 0px;
+}
+.card {
+  opacity: 0;
+  position: absolute;
+  width: 300px;
+  height: 546px;
+  background: #fff;
+  border-radius: 20px;
+  text-align: center;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -1px 15px 30px -15px black;
+  transform: translateX(-100px);
+  transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.card.active {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.7s;
+  transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.card.active ~ .card {
+  opacity: 0;
+  transform: translateX(500px);
+}
+.card header img {
+  width: 350px;
+  position: absolute;
+  top: -85px;
+  left: -25px;
+}
+.card header.bg-image {
+  position: relative;
+  height: 230px;
+  margin-bottom: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+main {
+  position: relative;
+  z-index: 100;
+  background-color: white;
+}
+
+.card main .level {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  color: #ec9b3b;
+}
+.card main .name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.card main p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #7d8c90;
+  padding: 0 25px;
+  text-align: left;
+  line-height: 15px;
+}
+.card footer {
+  display: flex;
+  justify-content: space-between;
+  min-height: 15%;
+  width: 100%;
+  background: #ec9b3b;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.card footer > div {
+  flex: 1 1 0;
+  font-weight: 400;
+  font-size: 11px;
+  text-align: left;
+  line-height: 14px;
+  padding: 10px 15px 5px 15px;
+}
+.card footer .left .title,
+.card footer .middle .title,
+.card footer .right .title {
+  text-transform: uppercase;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+.card footer div .content {
+  font-weight: 400;
+  font-size: 11px;
+  text-align: left;
+  line-height: 14px;
+  margin-left: 2px;
+}
+btn {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+btn svg {
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  border: 1px black solid;
+}
+btn svg:hover {
+  color: rgba(255, 255, 255, 1);
+}
+btn.previous {
+  position: absolute;
+  left: -1%;
+  top: 50%;
+}
+btn.next {
+  position: absolute;
+  right: -1%;
+  top: 50%;
+}
+
+/*** Characters specific ***/
+
+.card.solo header {
+  background: url(https://upsights.fra1.digitaloceanspaces.com/fwbmatch/starwars/characters-plain-bg-01.jpg);
+  background-size: 400px;
+}
+
+#characters footer {
+  background: #ec9b3b;
+}
+#characters footer > div {
+  border-right: 1px solid #bd7c2f;
+}
+#characters footer div:last-child {
+  border-right: none;
+}
+
+#locations footer {
+  background: #22262d;
+}
+
+#droids footer {
+  background: #51676f;
+}
+
+/*** Media queries ***/
+
+@media (max-width: 414px) {
+  .container {
+    width: 95vw;
+    margin: 10px auto 100px auto;
+    text-align: center;
+  }
+}
+
+/*** Hamburger navigation ***/
+
+*:focus {
+  outline: none;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+}
+/*** clouds, rocks... animation per category ***/
+
+#flying-object-01 {
+  top: 3vh;
+  left: 4vw;
+  position: absolute;
+}
+#flying-object-02 {
+  bottom: 7vh;
+  left: 25vw;
+  position: absolute;
+}
+
+.tp-link {
+  color: black;
+  font-weight: bold;
+}
+
+/* typed.js restyling stuff */
+
+.p-solo::after,
+.p-rey::after,
+.p-chewie::after,
+.p-jyn-erso::after,
+.p-boba::after,
+p-padme-amidala::after,
+.p-beckett::after {
+  content: "|";
+  color: #000;
+  font-weight: 900;
+  margin-left: 3px;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+.typed-cursor {
+  opacity: 0;
+  display: none;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*** Preload all images ***/
+
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+}
