@@ -3,6 +3,7 @@ body {
   background-size: cover;
   font: 20px "Nunito", Arial, sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
   transition: background 3s linear;
 }
 .container {
