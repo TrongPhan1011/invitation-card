@@ -3,35 +3,19 @@ body {
   background-size: cover;
   font: 20px "Nunito", Arial, sans-serif;
   overflow-x: hidden;
-  overflow-y: hidden;
   transition: background 3s linear;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
 }
-.container {
-  width: 50%;
-  margin: 10px auto;
-  text-align: center;
-}
-.categories {
-  margin: 0 auto;
-  max-width: 360px;
-  transform: translateX(0);
-}
-.category {
-  margin: 0 auto;
-  display: none;
-}
-.category.active {
-  display: block;
-}
-.category h1 {
-  font-size: 1.6rem;
-  text-align: center;
-  color: #fff;
-}
+
 .cards {
   width: 300px;
   height: 550px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   overflow-x: hidden;
   display: flex;
   padding: 100px 0px;
@@ -208,17 +192,6 @@ li {
   padding: 0;
 }
 /*** clouds, rocks... animation per category ***/
-
-#flying-object-01 {
-  top: 3vh;
-  left: 4vw;
-  position: absolute;
-}
-#flying-object-02 {
-  bottom: 7vh;
-  left: 25vw;
-  position: absolute;
-}
 
 .tp-link {
   color: black;
